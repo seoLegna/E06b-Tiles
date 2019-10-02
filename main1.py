@@ -118,8 +118,7 @@ class MyGame(arcade.Window):
 
         # Draw our score on the screen, scrolling it with the viewport
         score_text = f"Score: {self.score}"
-        arcade.draw_text(score_text, 10 + self.view_left, 10 + self.view_bottom,
-                         arcade.csscolor.WHITE, 18)
+        arcade.draw_text(score_text, 10 + self.view_left, 10 + self.view_bottom, arcade.csscolor.WHITE, 18)
 
     def on_key_press(self, key, modifiers):
         """Called whenever a key is pressed. """
@@ -148,8 +147,7 @@ class MyGame(arcade.Window):
         self.physics_engine.update()
 
         # See if we hit any coins
-        coin_hit_list = arcade.check_for_collision_with_list(self.player_sprite,
-                                                             self.coin_list)
+        coin_hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.coin_list)
 
         # Loop through each coin we hit (if any) and remove it
         for coin in coin_hit_list:
@@ -195,10 +193,7 @@ class MyGame(arcade.Window):
             self.view_left = int(self.view_left)
 
             # Do the scrolling
-            arcade.set_viewport(self.view_left,
-                                SCREEN_WIDTH + self.view_left,
-                                self.view_bottom,
-                                SCREEN_HEIGHT + self.view_bottom)
+            arcade.set_viewport(self.view_left, SCREEN_WIDTH + self.view_left, self.view_bottom, SCREEN_HEIGHT + self.view_bottom)
 
 
 def main():
